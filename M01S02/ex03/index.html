@@ -14,7 +14,7 @@
   <title>Inline JavaScript</title>
 </head>
 
-<body onload="console.log(prompt('Care este numele tau?'));">
+<body onload="alert('Bine ai venit');">
 
 
   <button
@@ -30,6 +30,21 @@
   >
     Boo!
   </button>
+
+  <br>
+
+  <button
+    type="button"
+    onclick="console.log(20 + 156);"
+  >Calculeaza suma</button>
+
+  <br>
+
+  <button
+    type="button"
+    onmouseover="console.log('apasa');"
+    onclick="console.log('m-ai apasat')"
+  >click-me</button>
 
 </body>
 
