@@ -1,5 +1,5 @@
 var inputRadius = document.getElementById('radius');
-var elementResult = document.getElementById('result');
+var inputResult = document.getElementById('result');
 var form = document.querySelector('form');
 
 form.addEventListener(
@@ -11,7 +11,7 @@ form.addEventListener(
 
     result = (4 / 3) * Math.PI * radius ** 3;
 
-    elementResult.innerText = result;
+    inputResult.innerText = result;
 
     event.preventDefault();
   },
