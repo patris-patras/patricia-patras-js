@@ -18,10 +18,48 @@
 </head>
 
 <body>
+  <form action="/">
+    <fieldset>
+      <legend>Calc volumul unui paralelipiped dreptunghic</legend>
+
+      <label for="length">Lungime:</label>
+      <input
+        type="text"
+        id="length"
+        name="length"
+        placeholder="lungime"
+      >
+
+      <br><br>
+
+      <label for="width">Latime:</label>
+      <input
+        type="text"
+        id="width"
+        name="width"
+        placeholder="latime"
+      >
+
+      <br><br>
+
+      <label for="height">Inaltime:</label>
+      <input
+        type="text"
+        id="height"
+        name="height"
+        placeholder="inaltime"
+      >
+
+      <br><br>
+
+      <button type="submit">Calculeaza:</button>
+
+      <p>Rezultat: <span id="result"></span></p>
+    </fieldset>
+  </form>
 
 
-
-  <script src="app.js"></script>
+  <script src="./app.js"></script>
 
   <div
     class="pixeltab-host"
