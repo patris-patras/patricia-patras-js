@@ -1,6 +1,6 @@
 var person = {
   name: 'Patris',
-  suname: 'Patras',
+  surname: 'Patras',
   friends: {},
 };
 
@@ -22,7 +22,7 @@ var steven = {
   friends: {},
 };
 
-var adnra = {
+var andra = {
   name: 'Andra',
   surname: 'Andrason',
   friends: {},
