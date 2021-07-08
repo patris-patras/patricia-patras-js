@@ -24,5 +24,14 @@ console.log(firstName);
 // si apoi ai .slice( , )
 
 console.warn(
-  'Afiseaza anul de nastere al persoanei folosind metoda getAge() si anul curent.',
+  '2.Afiseaza anul de nastere al persoanei folosind metoda getAge() si anul curent.',
 );
+const currentYear = new Date().getFullYear();
+const personAge = person.getAge();
+const birthYear = currentYear - personAge;
+console.log(currentYear - personAge);
+
+console.warn(
+  '3Afiseaza ultimele doua cifre al anului de nastere al persoanei, folosind anul curent si metoda getAge().',
+);
+console.log(birthYear.toString().slice(-2));
