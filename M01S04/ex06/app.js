@@ -126,7 +126,7 @@ for (let i = 0; i < friendsLength; i++) {
 console.log(sumBirthYears);
 
 console.warn(
-  'Afiseaza diferenta de varsta dintre persoana si prietenii din arrayul friends doar daca aceasta este mai mare de 2 ani',
+  '6.Afiseaza diferenta de varsta dintre persoana si prietenii din arrayul friends doar daca aceasta este mai mare de 2 ani',
 );
 for (let i = 0; i < friendsLength; i++) {
   const friend = person.friends[i];
@@ -155,8 +155,26 @@ for (let i = 0; i < friendsLength; i++) {
 }
 
 console.warn(
-  'Folosind proprietatea length a arrayului skills si o bucla for, afiseaza in ordine inversa elementele arrayului skills. Atentie, va trebui sa numeri invers, de la length la 0',
+  '8.Folosind proprietatea length a arrayului skills si o bucla for, afiseaza in ordine inversa elementele arrayului skills. Atentie, va trebui sa numeri invers, de la length la 0',
 );
 for (let i = person.skills.length - 1; i >= 0; i--) {
   console.log(person.skills[i]);
 }
+
+console.warn(
+  `9.Folosind obiectul person si un for, afiseaza in consola skillurile pe care le are persoana`,
+);
+for (let i = 0; i < person.skills.length; i++) {
+  console.log(person.skills[i]);
+}
+
+console.warn(`10. In mod similar, afiseaza skillurile care incep cu c`);
+for (let i = 0; i < person.skills.length; i++) {
+  if (person.skills[i].startsWith('c')) {
+    console.log(person.skills[i]);
+  }
+}
+
+console.warn(`11.Folosind un for afiseaza propozitia:
+"Numele de familie ale prietenilor mei sunt: xxx, xxx , xxx."
+`);
