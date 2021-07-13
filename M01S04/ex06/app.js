@@ -26,7 +26,7 @@ const person = {
     },
     {
       name: 'Carol',
-      surname: 'Larryson',
+      surname: 'Carolson',
       age: 29,
     },
   ],
@@ -155,7 +155,8 @@ for (let i = 0; i < friendsLength; i++) {
 }
 
 console.warn(
-  '8.Folosind proprietatea length a arrayului skills si o bucla for, afiseaza in ordine inversa elementele arrayului skills. Atentie, va trebui sa numeri invers, de la length la 0',
+  `'8.Folosind proprietatea length a arrayului skills si o bucla for,
+   afiseaza in ordine inversa elementele arrayului skills. Atentie, va trebui sa numeri invers, de la length la 0'`,
 );
 for (let i = person.skills.length - 1; i >= 0; i--) {
   console.log(person.skills[i]);
@@ -178,3 +179,92 @@ for (let i = 0; i < person.skills.length; i++) {
 console.warn(`11.Folosind un for afiseaza propozitia:
 "Numele de familie ale prietenilor mei sunt: xxx, xxx , xxx."
 `);
+
+// const friendsLength = person.friends.length;
+// let message = 'Prietenii mei se numesc ';
+message = 'Numele de familie ale prietenilor mei sunt: ';
+
+for (let i = 0; i < friendsLength; i++) {
+  const friend = person.friends[i];
+
+  let punctuation = ', ';
+
+  if (i === friendsLength - 1) {
+    punctuation = '.';
+  }
+
+  message += `${friend.surname}`;
+
+  message += punctuation;
+}
+console.log(message);
+
+console.warn(`12. Folosind un for,
+afiseaza numarul total de ani pe care il au persoanele din arrayul friends
+`);
+
+totalYears = 0;
+
+for (let i = 0; i < friendsLength; i++) {
+  totalYears += person.friends[i].age;
+}
+console.log(totalYears);
+
+console.warn(`13.Folosind un for, afiseaza suma anilor  persoanelor
+`);
+// idem exc 12
+
+console.warn(`14. Afiseaza diferenta de varsta dintre
+ persoana si prietenii din arrayul friends. `);
+
+for (let i = 0; i < friendsLength; i++) {
+  const friend = person.friends[i];
+  const ageDiff = Math.abs(friend.age - person.age);
+
+  console.log(
+    `Intre ${person.name} si ${friend.name} este o diferenta de ${ageDiff} ani.`,
+  );
+}
+
+console.warn(`15.Afiseaza fraza:
+"Intre Dragos si Larry este o diferenta de xx ani.
+Intre Dragos si Steven... ". Repeta pentru tot arrayul friends`);
+
+message = '';
+for (let i = 0; i < friendsLength; i++) {
+  const friend = person.friends[i];
+  const ageDiff = Math.abs(friend.age - person.age);
+
+  // console.log(
+  //   `Intre ${person.name} si ${friend.name} este o diferenta de ${ageDiff} ani.`,
+  // );
+
+  // message = `Intre ${person.name} si ${friend.name} este o diferenta de ${ageDiff} ani.`;
+  message += `Intre ${person.name} si ${friend.name} este o diferenta de ${ageDiff} ani.`;
+}
+
+console.log(message);
+
+console.warn(`16.Afiseaza fraza
+“Prietenii mei sunt: xxx yyy, xxx yyy, xxx yyy.”
+in ordine inversa a arrayului de prieteni. (Numarand de la length la 0).
+`);
+
+// const friendsLength = person.friends.length;
+message = 'Prietenii mei sunt: ';
+
+for (let i = person.skills.length - 1; i >= 0; i--) {
+  const friend = person.friends[i];
+  let punctuation = ', ';
+
+  message += `${friend.name} ${friend.surname}`;
+
+  if (i === 0) {
+    punctuation = '.';
+  }
+
+  message += punctuation;
+  console.log(message);
+}
+
+// imi da error Cannot read property 'name' of undefined at app.js:260

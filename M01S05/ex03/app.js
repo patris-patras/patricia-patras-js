@@ -1,4 +1,4 @@
-const calculateRectangleArea = (L, l) => {
+const calculateRectangleArea = function (L, l) {
   const surface = L * l;
 
   return surface;
