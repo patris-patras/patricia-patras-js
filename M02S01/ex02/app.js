@@ -78,6 +78,23 @@ class Bicycle extends Vehicle {
   }
 }
 
+class Tricycle extends Vehicle {
+  constructor(make, color, speed, topSpeed, topReverseSpeed) {
+    super(make, color, 3, speed, topSpeed, topReverseSpeed);
+  }
+}
+
 const bike = new Bicycle('Pegas', 'red', 8, 20);
+const trike = new Tricycle('Tryke', 'red', 2, 9, -2);
+
+// dupa ce am facut trike Pixelltab mi-a pus in nerezolvat ultima cerinta:
+//Cerinta este: Clasa Bicycle trebuie sa limiteze proprietatea topReverseSpeed la 0.
+//Instanta de test are valoarea -15 pentru proprietatea topReverseSpeed, dar trebuia sa aiba 0.
+
+const audi = new Car('audi', 'blue', 3, 140, -50);
+audi.setSpeed(140);
+
+trike.setSpeed(0);
+trike.setSpeed(-10);
 
 // home pt 5+ (excl 10)
