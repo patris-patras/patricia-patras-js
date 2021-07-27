@@ -1,0 +1,36 @@
+/* .body {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
+} */
+
+.container {
+  text-align: center;
+  display: flexbox;
+}
+
+.header > p {
+  font-size: smaller;
+  color: gray;
+}
+
+.main {
+  margin-top: 50px;
+}
+
+form {
+  margin-top: 50px;
+}
+
+form .guessField {
+  border-radius: 60px;
+  border-color: gray;
+}
+
+.button {
+  border-radius: 60px;
+  border-color: gray;
+}
+
+.message-box {
+  margin-top: 50px;
+}

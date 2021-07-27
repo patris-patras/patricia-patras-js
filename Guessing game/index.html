@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta
+    http-equiv="X-UA-Compatible"
+    content="IE=edge"
+  >
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
+  <title>Guess The number</title>
+
+</head>
+
+<body>
+  <header class="header container">
+    <h1>
+      Guess <span style="font-style: italic;">The number</span> game!
+    </h1>
+    <p>(and no, it's not always 42...)</p>
+  </header>
+
+
+  <main class="main container">
+    <p>
+      I'm thinking of a number between 1 and 100. Can you guess it?
+    </p>
+    <p>You only have 5 guesses!</p>
+    <form
+      action=""
+      class="guessForm"
+      id="guessForm"
+    >
+      <label for="guessField">Try a number:</label>
+      <input
+        type="number"
+        name="number"
+        id="guessField"
+        class="guessField"
+        placeholder="your number"
+        required
+      >
+      <br><br>
+      <button
+        type="submit"
+        name="submit"
+        title="Check your number!"
+        class="submitButton"
+        id="submitButton"
+      >Check your number!</button>
+    </form>
+
+    <div class="message-box">
+      <!-- <h1>
+        Status box
+      </h1> -->
+      <!-- <br><br> -->
+      <p>
+        Your previous guesses: <span
+          class="guesses"
+          id="guesses"
+        ></span>
+      </p>
+      <p
+        class="resultAssessment"
+        id="resultAssessment"
+      ></p>
+
+      <br><br>
+      <p id="guessesCount"></p>
+    </div>
+
+
+  </main>
+
+
+
+  <script src="app.js"></script>
+</body>
+
+</html>
