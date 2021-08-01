@@ -5,14 +5,16 @@ class Car {
     posX = 0,
     posY = 0,
     bodyColor = 'black',
-    // tireColor = 'black',
-    // hubCapColor = 'white',
+    tireColor = 'black',
+    hubCapColor = 'white',
+    areHazardsOn = false,
   ) {
     this.posX = posX;
     this.posY = posY;
     this.bodyColor = bodyColor;
-    // this.tireColor = tireColor;
-    // this.hubCapColor = hubCapColor;
+    this.tireColor = tireColor;
+    this.hubCapColor = hubCapColor;
+    this.areHazardsOn = areHazardsOn;
   }
 
   setPos(posX, posY) {
@@ -33,12 +35,74 @@ class Car {
     this.carBody.backgroundColor = color;
   }
 
-  turnHeadlightsOn() {
+  setTireColor(color) {
+    this.wheelBack.style.backgroundColor = color;
+    this.wheelFront.style.backgroundColor = color;
+  }
+
+  setHubCapColor(color) {
+    this.hubCapBack.style.backgroundColor = color;
+    this.hubCapFront.style.backgroundColor = color;
+  }
+
+  turnHeadLightsOn() {
     this.lightFront.classList.add('light--on');
   }
 
-  turnHeadlightsOff() {
+  turnHeadLightsOff() {
     this.lightFront.classList.remove('light--on');
+  }
+
+  engageBreak() {
+    this.lightBack.classList.add('light--on');
+  }
+
+  disenagageBreak() {
+    this.lightBack.classList.remove('light--on');
+  }
+
+  turnHazardsOn() {
+    this.lightFront.classList.add('light--on');
+    this.lightBack.classList.add('light--on');
+    this.areHazardsOn = true;
+  }
+
+  turnHazardsOff() {
+    this.lightFront.classList.remove('light--on');
+    this.lightBack.classList.remove('light--on');
+    this.areHazardsOn = false;
+  }
+
+  // v1 easy FARA repetat
+  // toggleHazards() {
+  //   this.turnHazardsOn();
+  //   setTimeout(() => {
+  //     this.turnHazardsOff();
+  //   }, 3000);
+  // }
+
+  //v2 NU imi repeta decat o data
+  // toggleHazards() {
+  //   setInterval(() => {
+  //     this.turnHazardsOn();
+  //     setTimeout(() => {
+  //       this.turnHazardsOff();
+  //     }, 2000);
+  //   }, 2000);
+  // }
+
+  // v3 NU imi repeta decat o data
+  toggleHazards() {
+    let i = 0;
+
+    setInterval(() => {
+      if (i % 0 === 0) {
+        this.turnHazardsOn();
+      } else {
+        this.turnHazardsOff();
+      }
+      i++;
+    }, 1000);
   }
 
   render() {
@@ -78,16 +142,20 @@ class Car {
     // wheel back ( block BEM / elem al lui car)
     this.wheelBack = document.createElement('div');
     this.wheelBack.classList.add('wheel', 'car__wheel', 'car__wheel--back');
-    this.hubCapBack = document.createElement('din');
+    this.wheelBack.style.backgroundColor = this.tireColor;
+    this.hubCapBack = document.createElement('div');
     this.hubCapBack.classList.add('wheel__cap');
+    this.hubCapBack.style.backgroundColor = this.hubCapColor;
     this.wheelBack.append(this.hubCapBack);
     this.carBody.append(this.wheelBack);
 
     // wheel front ( block BEM / elem al lui car)
     this.wheelFront = document.createElement('div');
     this.wheelFront.classList.add('wheel', 'car__wheel', 'car__wheel--front');
+    this.wheelFront.style.backgroundColor = this.tireColor;
     this.hubCapFront = document.createElement('div');
     this.hubCapFront.classList.add('wheel__cap');
+    this.hubCapFront.style.backgroundColor = this.hubCapColor;
     this.wheelFront.append(this.hubCapFront);
     this.carBody.append(this.wheelFront);
 

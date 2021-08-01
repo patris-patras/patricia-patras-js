@@ -3,7 +3,7 @@ const Car = {
   color: '',
   wheels: 0,
   speed: 0,
-  topSpeed: 160,
+  topSpeed: 140,
   topReverseSpeed: -50,
   areLightsOn: false,
   displaySpeed: function () {
@@ -51,19 +51,12 @@ const Car = {
   },
 };
 
-const audi = Object.create(Car); // ia lit car si il fol ca inst;
+const audi = Object.create(Car);
 // proto e car in sine; audi.proto e acelasi pointer ca variabila Car
-// obj se transm prin ref nu prin val; modificand protot lui audi am modif car
+// obj se transm prin ref nu prin val; modificand protot lui audi, modif car
 audi.make = 'Audi';
 audi.color = 'black';
-audi.topSpeed = 140;
 audi.wheels = 4;
 audi.speed = 0;
 audi.setSpeed(140);
 audi.accelerate();
-
-// live pt 1
-
-// Adauga o proprietate booleana numita areLightsOn si asigneaza-i valoarea false.
-// Adauga metode numite turnLightsOn() si turnLightsOff() care sa manipuleze valoarea.
-// Adauga o metoda numita flashLights() care sa apeleze cele doua metode in succesiune, folosind metoda window.setTimeout().
