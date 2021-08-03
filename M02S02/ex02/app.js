@@ -3,9 +3,11 @@ $(function () {
   const $skillInput = $('#skill');
   const $petToggle = $('#has-pets');
   const $addPetButton = $('.add-pet-button');
+  const $addFriendButton = $('.add-friend-button');
   const personContainerClass = 'person-container';
   const skillsUlClass = 'skills-ul';
   const petsUlClass = 'pets-ul';
+  const friendsUlClass = 'friends-ul';
 
   if ($petToggle.prop('checked') !== true) {
     $('.pet-fieldset').hide();
@@ -69,6 +71,23 @@ $(function () {
     $personContainer.append($petsUl);
 
     //friends UL
+    $personContainer.append(
+      $('<h3>', {
+        text: 'Friends',
+      }),
+    );
+
+    const $friendsUl = $('<ul>');
+
+    data.friends.forEach(({ name, surname, age }) => {
+      const friendsDetails = `Name: ${name}. Surname: ${surname}. Age: ${age}`;
+
+      $('<li>', {
+        text: friendDetails,
+      }).appendTo($friendsUl);
+    });
+
+    $personContainer.append($friendsUl);
   };
 
   const renderSkillsUl = (skill) => {
@@ -213,6 +232,30 @@ $(function () {
     return $petsUl.append($petLi);
   };
 
+  const renderFriendsUl = (friendData) => {
+    let $friendsUl = $(`.${friendsUlClass}`);
+
+    if ($friendsUl.length < 1) {
+      $friendsUl = $('<ul>', {
+        class: friendsUlClass,
+      });
+    }
+
+    const $friendLi = $('<li>', {
+      text: friendData.replaceAll('|', ' '),
+      class: 'friend-display',
+    });
+
+    $('<input>', {
+      type: 'hidden',
+      value: friendData,
+      name: `friend-${friendData}`,
+      class: 'friend-input',
+    }).appendTo($friendLi); //bag proxy in petLi
+
+    return $friendsUl.append($friendLi);
+  };
+
   // name e skill-
   const normalizeData = (data) => {
     // reduce() e fct de array; sim cu forEach
@@ -305,5 +348,21 @@ $(function () {
 
     $petsUl.insertAfter($addPetButton);
     // il punem dupa addPetButton
+  });
+
+  $addFriendButton.on('click', function () {
+    const $addFriendButton = $(this);
+    const $fields = $addFriendButton.siblings('[id^="friend-"]');
+    const fieldValues = [];
+
+    $fields.each(function () {
+      const $currentField = $(this);
+      fieldValues.push($currentField.val());
+    });
+
+    const friendData = fieldValues.join('|');
+    const $friendsUl = renderFriendsUl(friendData);
+
+    $friendsUl.insertAfter($addFriendButton);
   });
 });
