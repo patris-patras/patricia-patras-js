@@ -1,6 +1,9 @@
 // BEM object oriented CSS
 
 class Car {
+  areLightsOn = false; // for v live only
+  // exista si inainte sa ruleze constructorul si dupa; poti pune aici daca nu are nev de ceva param din af
+
   constructor(
     posX = 0,
     posY = 0,
@@ -46,32 +49,34 @@ class Car {
   }
 
   turnHeadLightsOn() {
-    this.lightFront.classList.add('light--on');
+    this.areLightsOn = true; // for v live only
+    // this.lightFront.classList.add('light--on');
   }
 
   turnHeadLightsOff() {
-    this.lightFront.classList.remove('light--on');
+    this.areLightsOn = false; // for v live only
+    // this.lightFront.classList.remove('light--on');
   }
 
-  engageBreak() {
-    this.lightBack.classList.add('light--on');
-  }
+  // engageBreak() {
+  //   this.lightBack.classList.add('light--on');
+  // }
 
-  disenagageBreak() {
-    this.lightBack.classList.remove('light--on');
-  }
+  // disenagageBreak() {
+  //   this.lightBack.classList.remove('light--on');
+  // }
 
-  turnHazardsOn() {
-    this.lightFront.classList.add('light--on');
-    this.lightBack.classList.add('light--on');
-    this.areHazardsOn = true;
-  }
+  // turnHazardsOn() {
+  //   this.lightFront.classList.add('light--on');
+  //   this.lightBack.classList.add('light--on');
+  //   this.areHazardsOn = true;
+  // }
 
-  turnHazardsOff() {
-    this.lightFront.classList.remove('light--on');
-    this.lightBack.classList.remove('light--on');
-    this.areHazardsOn = false;
-  }
+  // turnHazardsOff() {
+  //   this.lightFront.classList.remove('light--on');
+  //   this.lightBack.classList.remove('light--on');
+  //   this.areHazardsOn = false;
+  // }
 
   // v1 easy FARA repetat
   // toggleHazards() {
@@ -92,16 +97,37 @@ class Car {
   // }
 
   // v3 NU imi repeta decat o data
-  toggleHazards() {
-    let i = 0;
+  // toggleHazards() {
+  //   let i = 0;
 
-    setInterval(() => {
-      if (i % 0 === 0) {
-        this.turnHazardsOn();
+  //   setInterval(() => {
+  //     if (i % 0 === 0) {
+  //       this.turnHazardsOn();
+  //     } else {
+  //       this.turnHazardsOff();
+  //     }
+  //     i++;
+  //   }, 1000);
+  // }
+
+  // v live - lights only - breaks
+  toggleHazards() {
+    // search early return concept
+    if (this.intervalId !== undefined) {
+      clearTimeout(this.intervalId); // stop timeOut
+
+      delete this.intervalId; // kill interval
+      this.turnHeadLightsOff();
+
+      return;
+    }
+
+    this.intervalId = setInterval(() => {
+      if (this.areLightsOn === true) {
+        this.turnHeadLightsOff();
       } else {
-        this.turnHazardsOff();
+        this.turnHeadLightsOn();
       }
-      i++;
     }, 1000);
   }
 
@@ -180,3 +206,6 @@ class Car {
 
 //      test.setPosX(x);
 // }, 60)
+
+const audi = new Car(50, 50, 'pink');
+audi.render();
