@@ -1,13 +1,14 @@
 const box = document.querySelector('.box');
+const darkenButton = document.querySelector('.darken-button');
 const applyButton = document.getElementsByClassName('apply-button')[0]; // vezi html collection
 const animationClass = 'animate-class';
 
 setTimeout(() => {
-  box.classList.add(animationClass);
+  box.classList.toggle(animationClass);
 
   // callback hell
   setTimeout(() => {
-    box.classList.remove(animationClass);
+    box.classList.toggle(animationClass);
   }, 2000);
 }, 2000);
 // setTimeout e asincron
@@ -27,12 +28,21 @@ applyButton.addEventListener('click', (event) => {
   const buttonElement = event.currentTarget;
 
   if (box.classList.contains(animationClass)) {
-    box.classList.remove(animationClass);
+    box.classList.toggle(animationClass);
     buttonElement.textContent = 'Elimina';
   } else {
-    box.classList.add(animationClass);
+    box.classList.toggle(animationClass);
     buttonElement.textContent = 'Aplica';
   }
+});
+
+// Adauga alt buton cu textul “Intuneca”,
+// care atunci cand este apasat nu va aplica o clasa,
+// ci va aplica direct valoarea #000 pentru background-color, folosind /setAttribute
+darkenButton.addEventListener('click', () => {
+  // box.style.backgroundColor = '#000';
+
+  box.setAttribute('style', 'background-color: #000;');
 });
 
 // home 7 + 8
