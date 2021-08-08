@@ -23,6 +23,18 @@ const showMessage = (message) => {
 }; // suprascriem paragrapful asa
 
 const imageElement = document.querySelector('img.image');
+const imageLink = imageElement.getAttribute('src');
+
+imageElement.addEventListener('loadstart', () => {
+  showMessage('Imaginea se incarca...');
+});
+// HELP
+// Nu reusesc sa afisez asta ^. loadstart merge doar la audio/video banui...
+
 imageElement.addEventListener('load', () => {
   showMessage('Imaginea s-a incarcat');
+});
+
+imageElement.addEventListener('click', () => {
+  alert(`Imaginea cu URLul: ${imageLink} s-a incarcat.`);
 });

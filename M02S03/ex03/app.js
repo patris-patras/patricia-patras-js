@@ -1,5 +1,6 @@
 const fragment = new DocumentFragment();
 let counter = 0;
+let sideCounter = 0;
 
 // creare elem p
 const p = document.createElement('p');
@@ -18,16 +19,29 @@ document.body.append(fragment);
 
 const stage = document.querySelector('.stage');
 
+const sideCounterElement = document.createElement('p');
+
+document.body.append(sideCounterElement);
+
 stage.addEventListener('mouseover', () => {
   p.innerText = 'Mouse intra pe scena';
 
   counter++;
+  sideCounter++;
   counterElement.innerText = `Mouse a fost pe scena de ${counter} ori.`;
+  sideCounterElement.innerText = `Mouse a trecut peste ${sideCounter} laturi.`;
 });
 
 stage.addEventListener('mouseout', () => {
   p.innerText = 'Mouse iese de pe scena';
+
+  sideCounter++;
+  sideCounterElement.innerText = `Mouse a trecut peste ${sideCounter} laturi.`;
 });
 
 // daca faci toate astea in markup [sa creezi elem adica] ii afectezi structura...
 // vezi guessing game - counter pentru logica
+
+// sideCounterElement.innerText = `Mouse a trecut peste ${sideCounter} laturi.`;
+//    sideCounter++;
+//
