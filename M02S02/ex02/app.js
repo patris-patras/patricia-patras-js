@@ -80,7 +80,7 @@ $(function () {
     const $friendsUl = $('<ul>');
 
     data.friends.forEach(({ name, surname, age }) => {
-      const friendsDetails = `Name: ${name}. Surname: ${surname}. Age: ${age}`;
+      const friendDetails = `Name: ${name}. Surname: ${surname}. Age: ${age}`;
 
       $('<li>', {
         text: friendDetails,
@@ -251,7 +251,7 @@ $(function () {
       value: friendData,
       name: `friend-${friendData}`,
       class: 'friend-input',
-    }).appendTo($friendLi); //bag proxy in petLi
+    }).appendTo($friendLi);
 
     return $friendsUl.append($friendLi);
   };
@@ -291,6 +291,23 @@ $(function () {
         };
 
         personData.pets.push(value);
+
+        return personData;
+      }
+
+      if (name.startsWith('friend-')) {
+        let friendObject = {};
+        const friendData = value.split('|');
+        const [name, surname, age] = friendData;
+        personData.friend = personData.friend || [];
+
+        friendObject = {
+          name,
+          surname,
+          age,
+        };
+
+        personData.friends.push(value);
 
         return personData;
       }
