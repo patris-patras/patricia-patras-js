@@ -6,7 +6,7 @@
   <title>CSS animation in JavaScript</title>
   <style>
     .box {
-      width: 100px;
+      width: 200px;
       height: 100px;
       border: 1px solid #000;
       transition: background-color 1s ease;
@@ -18,10 +18,34 @@
 
   <div class="box"></div>
   <div class="controls">
-    <button value="red">button 1</button>
-    <button value="green">button 2</button>
-    <button value="blue">button 3</button>
+    <button value="red">red</button>
+    <button value="green">green</button>
+    <button value="blue">blue</button>
   </div>
+
+  <br><br>
+
+  <label for="color-input">Choose a color:</label>
+  <br>
+  <input
+    type="color"
+    class="color-input"
+    id="color-input"
+  >
+  <button
+    type="submit"
+    class="change-color-button"
+    id="change-color-button"
+  >Change the square to this color</button>
+
+  <br><br>
+
+  <button
+    type="reset"
+    class="reset-button"
+    id="reset-button"
+  >Choose another color</button>
+
   <script src="app.js"></script>
 </body>
 
