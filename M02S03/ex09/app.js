@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ascundem ul
     ul.style.display = 'none';
-    // setam eventBounde true
+    // setam eventBound true
     eventBound = true;
   }
 
