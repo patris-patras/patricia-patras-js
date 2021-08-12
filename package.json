@@ -1,0 +1,23 @@
+{
+  "name": "patricia-patras-js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/patris-patras/patricia-patras-js.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/patris-patras/patricia-patras-js/issues"
+  },
+  "homepage": "https://github.com/patris-patras/patricia-patras-js#readme",
+  "dependencies": {
+    "@fancyapps/ui": "^4.0.0-beta.0"
+  }
+}
