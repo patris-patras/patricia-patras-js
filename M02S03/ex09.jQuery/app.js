@@ -16,16 +16,10 @@ $(function () {
 
     if ($width <= 500) {
       $h1.on('click', clickHandler);
-      $ul.css('display', 'block');
+      $ul.show();
     } else {
       $h1.off('click', clickHandler);
-      $ul.css('display', 'none');
+      $ul.hide();
     }
   });
 });
-
-// HELP again!vec imi scapa?
-
-// si am eroarea asta in consola si nu inteleg ce $ e not defined:
-// app.js:1 Uncaught ReferenceError: $ is not defined
-//     at app.js:1
