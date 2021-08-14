@@ -29,20 +29,19 @@ colorInput.addEventListener('input', () => {
   if (colorInput.value.length > 0) {
     changeColorButton.style.backgroundColor = colorValue;
   }
+});
 
-  changeColorButton.addEventListener('click', () => {
-    box.style.backgroundColor = colorValue;
-  });
+changeColorButton.addEventListener('click', (event) => {
+  const colorButton = event.currentTarget;
+  const backgroundColor = colorButton.style.backgroundColor;
+
+  if (backgroundColor < 1) {
+    return;
+  }
+
+  box.style.backgroundColor = backgroundColor;
 });
 
 resetColorButton.addEventListener('click', () => {
-  // colorInput.value = '';
-  // changeColorButton.style.backgroundColor = '';
-
-  colorInput.removeAttribute(`style`);
   changeColorButton.removeAttribute(`style`);
 });
-
-// resetButton sa apara doar dupa ce e input
-
-//  HELP - nu imi iese asta cu removeAttribute.. nu imi dau seama cum trebuie scris
