@@ -299,7 +299,7 @@ $(function () {
         let friendObject = {};
         const friendData = value.split('|');
         const [name, surname, age] = friendData;
-        personData.friend = personData.friend || [];
+        personData.friends = personData.friends || [];
 
         friendObject = {
           name,
