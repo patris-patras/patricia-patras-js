@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta
+    http-equiv="X-UA-Compatible"
+    content="IE=edge"
+  >
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+  <title>jQuery Ajax</title>
+
+  <script
+    src="https://code.jquery.com/jquery-3.6.0.js"
+    integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"
+    defer
+  ></script>
+
+  <script
+    src="app.js"
+    defer
+  ></script>
+</head>
+
+<body>
+
+  <div id="app-root">
+
+  </div>
+
+  <form
+    id="person-form"
+    action="http://localhost:8080/persons"
+  >
+    <fieldset>
+      <legend>New Person</legend>
+
+      <div>
+        <input
+          type="text"
+          placeholder="Name"
+          name="name"
+          id="name"
+          required
+        >
+      </div>
+
+      <div>
+        <input
+          type="text"
+          placeholder="html,js,css,tailwind"
+          name="skills"
+          id="skills"
+          required
+        >
+      </div>
+
+      <div>
+        <button
+          type="submit"
+          title="Submit"
+        >Submit</button>
+      </div>
+    </fieldset>
+  </form>
+</body>
+
+</html>
