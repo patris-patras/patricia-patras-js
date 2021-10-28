@@ -42,7 +42,7 @@ console.log(
   person.friends.steven.name +
     ' este cu ' +
     (person.friends.steven.age - person.friends.larry.age) +
-    ' mai mare decat ' +
+    ' ani mai mare decat ' +
     person.friends.larry.name +
     '.',
 );
@@ -91,7 +91,7 @@ console.log(
   person.friends.steven.name +
     ' este cu ' +
     (person.friends.steven.age - person.friends.carol.age) +
-    ' mai mare decat ' +
+    ' ani mai mare decat ' +
     person.friends.carol.name +
     '.',
 );

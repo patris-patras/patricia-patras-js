@@ -150,7 +150,7 @@ for (let i = 0; i < friendsLength; i++) {
   }
 
   console.log(
-    `Intre ${person.name} si ${friend.name} este o diferenta de ${ageDiff} ani.`,
+    `Intre ${person.name} si ${friend.name} este o diferenta de ${ageDiff} ani. `,
   );
 }
 
@@ -253,11 +253,11 @@ in ordine inversa a arrayului de prieteni. (Numarand de la length la 0).
 // const friendsLength = person.friends.length;
 message = 'Prietenii mei sunt: ';
 
-for (let i = person.skills.length - 1; i >= 0; i--) {
-  const friend = person.friends[i];
+for (let i = friendsLength - 1; i >= 0; i--) {
+  const { name, surname } = person.friends[i];
   let punctuation = ', ';
 
-  message += `${friend.name} ${friend.surname}`;
+  message += `${name} ${surname}`;
 
   if (i === 0) {
     punctuation = '.';
@@ -266,5 +266,3 @@ for (let i = person.skills.length - 1; i >= 0; i--) {
   message += punctuation;
   console.log(message);
 }
-
-// imi da error Cannot read property 'name' of undefined at app.js:260

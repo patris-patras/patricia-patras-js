@@ -47,7 +47,7 @@ person.friends.forEach(function (friend, i, friends) {
   // const name = friend.name
 
   if (i === friendsLength - 2) {
-    punctuation = ' si ';
+    punctuation = ', ';
   }
 
   if (i === friendsLength - 1) {

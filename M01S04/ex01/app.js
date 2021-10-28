@@ -1,4 +1,4 @@
-var value = window.prompt();
+var value = window.prompt('Introdu un nr');
 var paragraphElement = document.getElementById('message');
 var message = '';
 

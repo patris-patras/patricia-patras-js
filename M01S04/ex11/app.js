@@ -57,7 +57,7 @@ friendsKeys
 console.warn(
   'Afiseaza propozitia: “Prietenii mei sunt Larry, Steven si Carol.” folosind Object.keys()',
 );
-let message = '“Prietenii mei sunt ';
+let message = 'Prietenii mei sunt ';
 friendsKeys.forEach(function (friendKey, i) {
   const { name } = person.friends[friendKey];
   const friendsLength = friendsKeys.length;
@@ -83,7 +83,7 @@ friendsKeys.forEach((friendKey) => {
   const ageDiff = Math.abs(person.age - age);
 
   console.log(
-    `Diferenta de varsta intre ${name} si ${person.name} este de ${ageDiff}.`,
+    `Diferenta de varsta intre ${name} si ${person.name} este de ${ageDiff} ani.`,
   );
 });
 
